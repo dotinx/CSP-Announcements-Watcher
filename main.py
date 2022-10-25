@@ -5,7 +5,7 @@ import time
 from bs4 import BeautifulSoup
 import os
 urlbase = "https://cspsj.noi.cn/page/index/noiNews.php?id="
-index = 59
+index = 60
 let = ""
 while True:
     req_time = datetime.datetime.now()
@@ -16,8 +16,9 @@ while True:
         print("\n")
         let = et
         print(et)
-        print("\n\r已更新 ",req_time.strftime("%Y-%m-%d %H:%M:%S"),end="")
+        print("\n\r"+str(index)+"已更新 ",req_time.strftime("%Y-%m-%d %H:%M:%S"),end="")
         os.system("hh "+"http://cspsj.noi.cn/page/index/noiNews.php?id="+str(index))
+        index += 1
     else:
         print("\r未更改 ",req_time.strftime("%Y-%m-%d %H:%M:%S"),end="")
     sleep(5)
